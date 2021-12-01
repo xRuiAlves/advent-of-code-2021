@@ -5,8 +5,12 @@ import utils.FileReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public abstract class DaySolution implements MultipartDaySolution {
+    private static final Pattern DAY_NUMBER_PATTERN = Pattern.compile("(?<number>\\d+)$");
+
     protected final List<String> input;
 
     protected DaySolution(String filePath) {
@@ -20,9 +24,20 @@ public abstract class DaySolution implements MultipartDaySolution {
     @Override
     public String toString() {
         return String.format(
-            "Part 1: %s\nPart 2: %s",
-            part1(),
-            part2()
+                "Day %s:\n  > Part 1: %s\n  > Part 2: %s",
+                getDayNumberFromClassName(),
+                part1(),
+                part2()
         );
+    }
+
+    private int getDayNumberFromClassName() {
+        Matcher matcher = DAY_NUMBER_PATTERN.matcher(this.getClass().getName());
+
+        if (!matcher.find()) {
+            throw new RuntimeException(String.format("Invalid class name %s: Does not have a day number!", this.getClass().getName()));
+        }
+
+        return Integer.parseInt(matcher.group("number"));
     }
 }

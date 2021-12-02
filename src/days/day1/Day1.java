@@ -13,12 +13,12 @@ public class Day1 extends DaySolution {
 
     @Override
     public Object part1() {
-        return countIncreases(input.stream().map(Integer::parseInt).collect(Collectors.toList()));
+        return countIncreases(inputAsIntList());
     }
 
     @Override
     public Object part2() {
-        List<Integer> measurementsTrios = getMeasurementsTrios(input.stream().map(Integer::parseInt).collect(Collectors.toList()));
+        List<Integer> measurementsTrios = getMeasurementsTrios(inputAsIntList());
         return countIncreases(measurementsTrios);
     }
 

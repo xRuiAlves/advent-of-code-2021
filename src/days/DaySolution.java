@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public abstract class DaySolution implements MultipartDaySolution {
     private static final Pattern DAY_NUMBER_PATTERN = Pattern.compile("(?<number>\\d+)$");
@@ -19,6 +20,17 @@ public abstract class DaySolution implements MultipartDaySolution {
         } catch (IOException e) {
             throw new RuntimeException("Failed to read input file", e);
         }
+    }
+
+    protected final List<Integer> inputAsIntList() {
+        return input
+            .stream()
+            .map(Integer::parseInt)
+            .collect(Collectors.toList());
+    }
+
+    protected final String firstInputLine() {
+        return input.get(0);
     }
 
     @Override

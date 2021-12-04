@@ -1,4 +1,4 @@
-package days.day1;
+package days.day3;
 
 import days.DaySolution;
 
@@ -70,8 +70,8 @@ public class Day3 extends DaySolution {
 
                 int position = i;
                 char bit = bitCount >= 0
-                        ? (isOxygen ? '1' : '0')
-                        : (isOxygen ? '0' : '1');
+                    ? (isOxygen ? '1' : '0')
+                    : (isOxygen ? '0' : '1');
 
                 currentValues = currentValues
                     .stream()

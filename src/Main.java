@@ -1,8 +1,8 @@
 import days.MultipartDaySolution;
 import days.day1.Day1;
-import days.day1.Day2;
-import days.day1.Day3;
-import days.day1.Day4;
+import days.day2.Day2;
+import days.day3.Day3;
+import days.day4.Day4;
 
 import java.util.List;
 

@@ -18,10 +18,9 @@ public class Day4 extends DaySolution {
         Set<Board> boards = parseBoards();
 
         for (int number : drawnNumbers) {
-            for (Board board : boards) {
-                if (board.playNumber(number)) {
-                    return board.unmarkedNumbersSum() * number;
-                }
+            Optional<Board> winningBoard = boards.stream().filter(board -> board.playNumber(number)).findFirst();
+            if (winningBoard.isPresent()) {
+                return winningBoard.get().unmarkedNumbersSum() * number;
             }
         }
 

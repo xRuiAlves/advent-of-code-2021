@@ -35,12 +35,27 @@ public abstract class DaySolution implements MultipartDaySolution {
 
     @Override
     public String toString() {
+        long t1 = System.nanoTime();
+        Object resultPart1 = part1();
+        long t2 = System.nanoTime();
+        Object resultPart2 = part2();
+        long t3 = System.nanoTime();
+
+        double elapsedTimePart1 = elapsedTimeInMillis(t1, t2);
+        double elapsedTimePart2 = elapsedTimeInMillis(t2, t3);
+
         return String.format(
-                "Day %s:\n  > Part 1: %s\n  > Part 2: %s",
+                "Day %s:\n  > Part 1: %s (%.3fms)\n  > Part 2: %s (%.3fms)",
                 getDayNumberFromClassName(),
-                part1(),
-                part2()
+                resultPart1,
+                elapsedTimePart1,
+                resultPart2,
+                elapsedTimePart2
         );
+    }
+
+    private double elapsedTimeInMillis(long ti, long tf) {
+        return (double) (tf - ti) / 1000000;
     }
 
     private int getDayNumberFromClassName() {

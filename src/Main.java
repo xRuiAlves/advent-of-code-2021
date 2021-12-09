@@ -7,6 +7,7 @@ import days.day5.Day5;
 import days.day6.Day6;
 import days.day7.Day7;
 import days.day8.Day8;
+import days.day9.Day9;
 
 import java.util.List;
 
@@ -19,7 +20,8 @@ public class Main {
             new Day5("input/day5.txt"),
             new Day6("input/day6.txt"),
             new Day7("input/day7.txt"),
-            new Day8("input/day8.txt")
+            new Day8("input/day8.txt"),
+            new Day9("input/day9.txt")
     );
 
     public static void main(String[] args) {

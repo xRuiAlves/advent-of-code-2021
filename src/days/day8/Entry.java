@@ -54,7 +54,6 @@ public final class Entry {
         digits.put(5, find(isFive(digits)));
         digits.put(2, find(isTwo(digits)));
         return digits
-                
             .entrySet()
             .stream()
             .collect(Collectors.toMap(e -> charSetToSortedString(e.getValue()), e -> String.valueOf(e.getKey())));

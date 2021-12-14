@@ -4,6 +4,7 @@ import days.day10.Day10;
 import days.day11.Day11;
 import days.day12.Day12;
 import days.day13.Day13;
+import days.day14.Day14;
 import days.day2.Day2;
 import days.day3.Day3;
 import days.day4.Day4;
@@ -29,7 +30,8 @@ public class Main {
             new Day10("input/day10.txt"),
             new Day11("input/day11.txt"),
             new Day12("input/day12.txt"),
-            new Day13("input/day13.txt")
+            new Day13("input/day13.txt"),
+            new Day14("input/day14.txt")
     );
 
     public static void main(String[] args) {

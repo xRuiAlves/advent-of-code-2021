@@ -4,6 +4,7 @@ import utils.FileReader;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -31,6 +32,16 @@ public abstract class DaySolution implements MultipartDaySolution {
 
     protected final String firstInputLine() {
         return input.get(0);
+    }
+
+    protected final int[][] inputAsIntMatrix() {
+        return input
+            .stream()
+            .map(line -> Arrays
+                    .stream(line.split(""))
+                    .mapToInt(Integer::parseInt)
+                    .toArray())
+            .toArray(int[][]::new);
     }
 
     @Override

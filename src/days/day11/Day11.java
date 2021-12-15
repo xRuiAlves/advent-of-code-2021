@@ -12,7 +12,7 @@ public class Day11 extends DaySolution {
 
     @Override
     public Object part1() {
-        Map map = map();
+        Map map = new Map(inputAsIntMatrix());
 
         int flashCount = 0;
         for (int i = 0; i < PART_1_CYCLE_COUNT; ++i) {
@@ -25,7 +25,7 @@ public class Day11 extends DaySolution {
 
     @Override
     public Object part2() {
-        Map map = map();
+        Map map = new Map(inputAsIntMatrix());
 
         for (int i = 0; i < Integer.MAX_VALUE; ++i) {
             map.flash();
@@ -35,15 +35,5 @@ public class Day11 extends DaySolution {
         }
 
         throw new RuntimeException("No simultaneous flash found!");
-    }
-
-    private Map map() {
-        return new Map(input
-            .stream()
-            .map(line -> Arrays
-                .stream(line.split(""))
-                .mapToInt(Integer::parseInt)
-                .toArray())
-            .toArray(int[][]::new));
     }
 }

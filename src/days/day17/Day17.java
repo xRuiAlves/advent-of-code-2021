@@ -17,8 +17,8 @@ public class Day17 extends DaySolution {
         Square target = target();
         int maxY = 0;
 
-        for (int xInitSpeed = 1; xInitSpeed <= target.width(); ++xInitSpeed) {
-            for (int yInitSpeed = 1; yInitSpeed <= 3 * target.height(); ++yInitSpeed) {
+        for (int xInitSpeed = 1; xInitSpeed <= target.x1(); ++xInitSpeed) {
+            for (int yInitSpeed = 1; yInitSpeed <= -target.y2(); ++yInitSpeed) {
                 Probe probe = new Probe(xInitSpeed, yInitSpeed);
                 if (probe.simulate(target)) {
                     maxY = Math.max(maxY, probe.highestY());
@@ -35,7 +35,7 @@ public class Day17 extends DaySolution {
         int count = 0;
 
         for (int xInitSpeed = 1; xInitSpeed <= target.x2(); ++xInitSpeed) {
-            for (int yInitSpeed = target.y2(); yInitSpeed <= 3 * target.height(); ++yInitSpeed) {
+            for (int yInitSpeed = target.y2(); yInitSpeed <= -target.y2(); ++yInitSpeed) {
                 Probe probe = new Probe(xInitSpeed, yInitSpeed);
                 if (probe.simulate(target)) {
                     ++count;

@@ -23,14 +23,6 @@ public class Probe {
         return y;
     }
 
-    public int xSpeed() {
-        return xSpeed;
-    }
-
-    public int ySpeed() {
-        return ySpeed;
-    }
-
     public int highestY() {
         return highestY;
     }
@@ -41,12 +33,6 @@ public class Probe {
         xSpeed -= sign(xSpeed);
         ySpeed -= 1;
         highestY = Math.max(highestY, y);
-//
-//        System.out.println(x);
-//        System.out.println(y);
-//        System.out.println(xSpeed);
-//        System.out.println(ySpeed);
-//        System.out.println("-----");
     }
 
     public boolean pastSquare(Square square) {
@@ -72,7 +58,6 @@ public class Probe {
             return false;
         }
 
-        int i = 0;
         while (true) {
             if (inSquare(target)) {
                 return true;

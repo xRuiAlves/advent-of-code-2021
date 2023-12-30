@@ -24,7 +24,7 @@ object Day24 {
   }
 
   def parseInstructions(input: Array[String]): Array[Instruction] = input.map {
-    case s"inp $lhs" => Inp(Variable(lhs))
+    case s"inp $lhs"      => Inp(Variable(lhs))
     case s"add $lhs $rhs" => Add(Variable(lhs), parseInstructionRhs(rhs))
     case s"mul $lhs $rhs" => Mul(Variable(lhs), parseInstructionRhs(rhs))
     case s"div $lhs $rhs" => Div(Variable(lhs), parseInstructionRhs(rhs))
